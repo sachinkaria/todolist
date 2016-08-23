@@ -6,28 +6,39 @@
   <script src="app.js"></script>
   <script src="mainController.js"></script>
 </head>
-<body class="container" ng-app="toDoList" ng-controller="mainController">
+<body class="container text-center" ng-app="toDoList" ng-controller="mainController">
   <h1>My Todo List</h1>
   <h4>Made with love by Sachin Karia</h4>
-<hr>
+
+  <hr>
+
   <form class="form-inline">
-    <input class="form-control" placeholder="Add another task!" type="text" ng-model="descriptionText"/>
-    <button class="btn btn-primary" ng-click="addTodo()">Add</button>
+    <div class="form-group">
+      <input class="form-control" style="min-width:300px;" placeholder="Add task!" type="text" ng-model="descriptionText"/>
+      <button class="btn btn-primary" ng-click="addTodo()">Add Another Task</button>
+    </div>
   </form>
-<hr>
-  <div class="table-responsive">
-    <table class="table table-sm" ng-repeat="todo in todoList">
+
+  <hr>
+
+  <div class="table table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Task Description</th>
+          <th>Date</th>
+          <th></th>
+        </tr>
+      </thead>
       <tbody>
-        <tr>
-        <td>{{ todo.description }}</td>
-        <td>{{ todo.created | date }}</td>
-        <td>  <button class="btn btn-success" ng-click="removeTodo(todo)">Completed!</button></td>
-        <tr>
+        <tr ng-repeat="todo in todoList">
+          <td>{{ todo.description }}</td>
+          <td>{{ todo.created | date }}</td>
+          <td>  <button class="btn btn-success" ng-click="removeTodo(todo)">Completed!</button></td>
+        </tr>
       </tbody>
     </table>
   </div>
-
-
 
 </body>
 </html>
