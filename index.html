@@ -1,14 +1,18 @@
 <html>
-  <head>
-    <title>To Do List</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="app.js"></script>
-    <script src="mainController.js"></script>
-  </head>
-  <body ng-app="toDoList" ng-controller="mainController">
-    <h1>My Todo List</h1>
-    <div ng-repeat="todo in todoList">
-      {{ todo.description }} - {{ todo.created }}
-    </div>
-  </body>
+<head>
+  <title>To Do List</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="mainController.js"></script>
+</head>
+<body ng-app="toDoList" ng-controller="mainController">
+  <h1>My Todo List</h1>
+  <div ng-repeat="todo in todoList">
+    {{ todo.description }} - {{ todo.created }}
+  </div>
+  <form>
+    <input placeholder="Add another task!" type="text" ng-model="descriptionText"/>
+    <button ng-click="addTodo()">Add</button>
+  </form>
+</body>
 </html>
