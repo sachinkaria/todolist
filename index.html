@@ -8,7 +8,8 @@
 <body ng-app="toDoList" ng-controller="mainController">
   <h1>My Todo List</h1>
   <div ng-repeat="todo in todoList">
-    {{ todo.description }} - {{ todo.created }}
+    {{ todo.description }} - {{ todo.created | date }}
+    <button ng-click="removeTodo(todo)">Completed!</button>
   </div>
   <form>
     <input placeholder="Add another task!" type="text" ng-model="descriptionText"/>
