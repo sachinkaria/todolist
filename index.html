@@ -6,8 +6,9 @@
     <script src="mainController.js"></script>
   </head>
   <body ng-app="toDoList" ng-controller="mainController">
-    <div>
-      {{test}}
+    <h1>My Todo List</h1>
+    <div ng-repeat="todo in todoList">
+      {{ todo.description }} - {{ todo.created }}
     </div>
   </body>
 </html>
