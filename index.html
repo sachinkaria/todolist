@@ -3,19 +3,20 @@
   <title>To Do List</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
   <script src="app.js"></script>
   <script src="mainController.js"></script>
 </head>
 <body class="container text-center" ng-app="toDoList" ng-controller="mainController">
-  <h1>My Todo List</h1>
+  <h1 style="font-family: 'Dancing Script', cursive; font-size: 48px;">My Todo List</h1>
   <h4>Made with love by Sachin Karia</h4>
 
   <hr>
 
   <form class="form-inline">
     <div class="form-group">
-      <input class="form-control" style="min-width:300px;" placeholder="Add task!" type="text" ng-model="descriptionText"/>
-      <button class="btn btn-primary" ng-click="addTodo()">Add Another Task</button>
+      <input class="form-control" style="min-width:300px;" placeholder="Buy some more coffee..." type="text" ng-model="descriptionText"/>
+      <button class="btn btn-primary" ng-click="addTodo()">Add Task</button>
     </div>
   </form>
 
