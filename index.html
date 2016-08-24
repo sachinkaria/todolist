@@ -13,10 +13,17 @@
 
   <hr>
 
-  <form class="form-inline">
+  <form ng-hide = "editable" class="form-inline">
     <div class="form-group">
       <input class="form-control" style="min-width:300px;" placeholder="Buy some more coffee..." type="text" ng-model="descriptionText"/>
-      <button class="btn btn-primary" ng-click="addTodo()">Add Task</button>
+      <button class="btn btn-primary" ng-click="addTodo()">   Add Task   </button>
+    </div>
+  </form>
+
+  <form ng-show="editable" class="form-inline">
+    <div class="form-group">
+      <input class="form-control" style="min-width:300px;" ng-model="existingTodo.description" type="text" ng-model="descriptionText"/>
+      <button class="btn btn-primary" ng-click="saveTodo()">Save</button>
     </div>
   </form>
 
@@ -35,7 +42,8 @@
         <tr ng-repeat="todo in todoList">
           <td>{{ todo.description }}</td>
           <td>{{ todo.created | date }}</td>
-          <td>  <button class="btn btn-success" ng-click="removeTodo(todo)">Completed!</button></td>
+          <td>  <button class="btn btn-success" ng-click="removeTodo(todo)">Completed!</button>
+          <button class="btn btn-default" ng-click="editTodo(todo)">Edit!</button></td>
         </tr>
       </tbody>
     </table>
