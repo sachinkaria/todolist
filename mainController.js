@@ -1,12 +1,14 @@
 app.controller('mainController', ['$scope',function($scope){
   $scope.test = 'Hello world!';
   $scope.todoList = [];
-  $scope.currentData = Date.now();
   $scope.editable = false;
+  $scope.showList = false;
+
 
   $scope.addTodo = function(todo){
     $scope.todoList.push({description: $scope.descriptionText, created: Date.now()});
     $scope.descriptionText = '';
+    $scope.showList = true;
   };
 
   $scope.removeTodo = function(todo){
