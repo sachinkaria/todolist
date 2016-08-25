@@ -5,6 +5,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
   <script src="app.js"></script>
   <script src="mainController.js"></script>
 </head>
@@ -30,18 +31,18 @@
 
   <hr>
 
-  <div class="table table-responsive" ng-show="showList">
+  <div class="table table-responsive" style="font-family: 'Indie Flower', cursive;" ng-show="showList">
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Task Description</th>
+          <th>I have to...</th>
           <th>Date</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="todo in todoList">
-          <td>{{ todo.description }}</td>
+          <td class="col-md-6">{{ todo.description }}</td>
           <td>{{ todo.created | date }}</td>
           <td>  <button class="btn btn-success" ng-click="removeTodo(todo)">Completed!</button>
           <button class="btn btn-default" ng-click="editTodo(todo)">Edit!</button></td>
