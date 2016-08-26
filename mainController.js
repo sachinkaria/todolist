@@ -6,6 +6,7 @@ app.controller('mainController', ['$scope',function($scope){
 
 
   $scope.addTodo = function(todo){
+    if(!$scope.descriptionText || $scope.descriptionText === '') { return; }
     $scope.todoList.push({description: $scope.descriptionText, created: Date.now()});
     $scope.descriptionText = '';
     $scope.showList = true;
